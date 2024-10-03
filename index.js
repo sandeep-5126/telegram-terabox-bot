@@ -3,6 +3,17 @@ import axios from "axios";
 import dotenv from "dotenv";
 import stream from "stream"; // Import the stream module
 import { promisify } from "util"; // Import util to promisify the pipeline function
+import express from "express";
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.get("/", (req, res) => res.send("Hello World!"));
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
+// Load environment variables from .env file
 
 dotenv.config();
 
